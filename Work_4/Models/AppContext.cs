@@ -45,7 +45,7 @@ public partial class AppContext : DbContext
             entity.Property(e => e.Studio).HasColumnName("studio");
             entity.Property(e => e.TitleName).HasColumnName("titleName");
             entity.Property(e => e.YearOfRealise).HasColumnName("yearOfRealise");
-
+            
             entity.HasOne(d => d.IdAnimeTypeNavigation).WithMany(p => p.AnimeTitles)
                 .HasForeignKey(d => d.IdAnimeType)
                 .OnDelete(DeleteBehavior.ClientSetNull)
