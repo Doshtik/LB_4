@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            buttonTypeDelete = new Button();
+            buttonTypeEdit = new Button();
+            buttonTypeAdd = new Button();
             panel2 = new Panel();
             dataGridViewTypes = new DataGridView();
             panel1.SuspendLayout();
@@ -41,9 +41,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonTypeDelete);
+            panel1.Controls.Add(buttonTypeEdit);
+            panel1.Controls.Add(buttonTypeAdd);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4);
@@ -52,32 +52,33 @@
             panel1.Size = new Size(1029, 75);
             panel1.TabIndex = 0;
             // 
-            // button3
+            // buttonTypeDelete
             // 
-            button3.Location = new Point(261, 23);
-            button3.Name = "button3";
-            button3.Size = new Size(99, 30);
-            button3.TabIndex = 2;
-            button3.Text = "Удалить";
-            button3.UseVisualStyleBackColor = true;
+            buttonTypeDelete.Location = new Point(261, 23);
+            buttonTypeDelete.Name = "buttonTypeDelete";
+            buttonTypeDelete.Size = new Size(99, 30);
+            buttonTypeDelete.TabIndex = 2;
+            buttonTypeDelete.Text = "Удалить";
+            buttonTypeDelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonTypeEdit
             // 
-            button2.Location = new Point(118, 23);
-            button2.Name = "button2";
-            button2.Size = new Size(137, 30);
-            button2.TabIndex = 1;
-            button2.Text = "Редактировать";
-            button2.UseVisualStyleBackColor = true;
+            buttonTypeEdit.Location = new Point(118, 23);
+            buttonTypeEdit.Name = "buttonTypeEdit";
+            buttonTypeEdit.Size = new Size(137, 30);
+            buttonTypeEdit.TabIndex = 1;
+            buttonTypeEdit.Text = "Редактировать";
+            buttonTypeEdit.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonTypeAdd
             // 
-            button1.Location = new Point(10, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 30);
-            button1.TabIndex = 0;
-            button1.Text = "Добавить";
-            button1.UseVisualStyleBackColor = true;
+            buttonTypeAdd.Location = new Point(10, 23);
+            buttonTypeAdd.Name = "buttonTypeAdd";
+            buttonTypeAdd.Size = new Size(99, 30);
+            buttonTypeAdd.TabIndex = 0;
+            buttonTypeAdd.Text = "Добавить";
+            buttonTypeAdd.UseVisualStyleBackColor = true;
+            buttonTypeAdd.Click += buttonTypeAdd_Click;
             // 
             // panel2
             // 
@@ -124,9 +125,9 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
-        private Button button1;
-        private Button button3;
+        private Button buttonTypeEdit;
+        private Button buttonTypeAdd;
+        private Button buttonTypeDelete;
         private Panel panel2;
         private DataGridView dataGridViewTypes;
     }

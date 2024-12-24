@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 
 namespace Work_4
 {
@@ -26,9 +27,18 @@ namespace Work_4
             dataGridViewTypes.Columns["AnimeOfType"].HeaderText = "“ËÔ";
         }
 
-        private void FormTypes_Load(object sender, EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            
+            base.OnClosing(e);
+
+            _db.Dispose();
+            _db = null;
+        }
+
+        private void buttonTypeAdd_Click(object sender, EventArgs e)
+        {
+            FormTypeAdd form = new FormTypeAdd();
+            form.ShowDialog();
         }
     }
 }
