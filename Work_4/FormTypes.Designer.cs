@@ -69,6 +69,7 @@
             buttonTypeEdit.TabIndex = 1;
             buttonTypeEdit.Text = "Редактировать";
             buttonTypeEdit.UseVisualStyleBackColor = true;
+            buttonTypeEdit.Click += buttonTypeEdit_Click;
             // 
             // buttonTypeAdd
             // 
@@ -115,6 +116,7 @@
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(4);
             Name = "FormTypes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Справочник CRUD";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
