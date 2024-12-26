@@ -60,6 +60,7 @@
             buttonTypeDelete.TabIndex = 2;
             buttonTypeDelete.Text = "Удалить";
             buttonTypeDelete.UseVisualStyleBackColor = true;
+            buttonTypeDelete.Click += ButtonTypeDelete_Click;
             // 
             // buttonTypeEdit
             // 

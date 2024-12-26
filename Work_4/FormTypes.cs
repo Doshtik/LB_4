@@ -85,5 +85,32 @@ namespace Work_4
             MessageBox.Show("Объект обновлен");
             dataGridViewTypes.DataSource = _db.AnimeTypes.Local.OrderBy(o => o.AnimeOfType).ToList();
         }
+
+        private void ButtonTypeDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTypes.SelectedRows.Count == 0)
+                return;
+
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите удалить объект?", "",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+                return;
+
+            int index = dataGridViewTypes.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewTypes[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            AnimeType animeType = _db.AnimeTypes.Find(id);
+
+            _db.Remove(animeType);
+            _db.SaveChanges();
+
+            MessageBox.Show("Объект удален");
+            dataGridViewTypes.DataSource = _db.AnimeTypes.Local.OrderBy(o => o.AnimeOfType).ToList();
+        }
     }
 }
